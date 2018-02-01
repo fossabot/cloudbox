@@ -37,8 +37,6 @@
     - speedtest-cli
     - python-ndg-httpsclient
     - nethogs
-    - nodejs-legacy
-    - npm
     - glances
 
 - name: Install common pip modules
@@ -47,7 +45,10 @@
     - docker-py
     - certbot
     - "ansible-toolbox"
-
+    
+- name: "Installing NodeJS 8.x"
+  shell: "curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - && sudo apt-get install -y nodejs"
+  
 - name: Install common npm modules
   npm: "name={{item}} global=yes"
   with_items:
