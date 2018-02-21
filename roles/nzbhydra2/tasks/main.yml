@@ -9,44 +9,37 @@
 
 - name: Stop and remove any existing container
   docker_container:
-    name: lidarr
+    name: nzbhydra2
     state: absent
-    
-- name: Create lidarr directories
+
+- name: Create nzbhydra2 directories
   file: "path={{item}} state=directory mode=0775 owner={{user}} group={{user}}"
   with_items:
-    - /opt/lidarr
-    - /mnt/local/Media/Music
+    - /opt/nzbhydra2
 
 - name: Create and start container
   docker_container:
-    name: lidarr
+    name: nzbhydra2
     image: hotio/suitarr
     pull: yes
     published_ports:
-      - "127.0.0.1:8686:8686"
+      - "127.0.0.1:5076:5076"
     env:
-      APP: "lidarr"
+      APP: "nzbhydra2"
       VERSION: "unstable"
+      BACKUP: "no"
       PUID: "{{uid.stdout}}"
       PGID: "{{gid.stdout}}"
-      BACKUP: "no"
-      MONO_TLS_PROVIDER: legacy
-      VIRTUAL_HOST: "lidarr.{{domain}}"
-      VIRTUAL_PORT: 8686
-      LETSENCRYPT_HOST: "lidarr.{{domain}}"
+      VIRTUAL_HOST: "nzbhydra2.{{domain}}"
+      VIRTUAL_PORT: 5076
+      LETSENCRYPT_HOST: "nzbhydra2.{{domain}}"
       LETSENCRYPT_EMAIL: "{{email}}"
     volumes:
       - "/etc/localtime:/etc/localtime:ro"
-      - "/opt/lidarr:/config"
-      - "/mnt/unionfs/Media/Music:/music"
-      - "{{nzbget.downloads}}:/downloads/nzbget"
-      - "{{rutorrent.downloads}}:/downloads/rutorrent"
-      - "/mnt:/mnt"
-      - "/opt/scripts:/scripts"
+      - "/opt/nzbhydra2:/config"
+    restart_policy: always
     networks:
       - name: cloudbox
         aliases:
-          - lidarr
-    restart_policy: always
+          - nzbhydra2
     state: started
