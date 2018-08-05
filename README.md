@@ -12,7 +12,8 @@ _If you find this project helpful, feel free to make a small donation via [PayPa
 
 | What's Installed                                                |    Full     |   Feeder    |    Plex     |
 |:--------------------------------------------------------------- |:-----------:|:-----------:|:-----------:|
-| [Docker][627bd283]                                              | ![Yes][yes] | ![Yes][yes] | ![Yes][yes] |
+| [Docker][627bd283]                                              | ![Yes][yes] [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRXWatcher1%2Fcloudbox.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FRXWatcher1%2Fcloudbox?ref=badge_shield)
+| ![Yes][yes] | ![Yes][yes] |
 | [Plex][10952c53] ([docker][d369f92b])                           | ![Yes][yes] |             | ![Yes][yes] |
 | [PlexPy][363c0adc] ([docker][cda70c13])                         | ![Yes][yes] |             | ![Yes][yes] |
 | [Plex AutoScan][96e27fd1]                                       | ![Yes][yes] |             | ![Yes][yes] |
@@ -94,3 +95,7 @@ _If you find this project helpful, feel free to make a small donation via [PayPa
 
 ## Community Chat
 - [Slack Channel](https://join.slack.com/t/cloud-box/shared_invite/MjM1NTI2OTEwMzIyLTE1MDQzOTAyNDAtYWNhOWY2NzNiZA)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FRXWatcher1%2Fcloudbox.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FRXWatcher1%2Fcloudbox?ref=badge_large)
